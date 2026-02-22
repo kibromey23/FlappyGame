@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Flappy Bird Enhanced</title>
+
+  <link rel="stylesheet" href="style.css" />
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#3498db">
+</head>
+<body>
+
+  <button id="menuBtn">☰</button>
+
+  <div id="menu" class="hidden">
+    <button id="closeMenuBtn">✕</button>
+    <ul>
+      <li><label><input type="checkbox" id="nightModeToggle" /> Night Mode</label></li>
+      <li><button id="openSettings">⚙️ Game Settings</button></li>
+      <li><button id="openAppInfo">ℹ️ App Info</button></li>
+    </ul>
+  </div>
+
+  <div id="settingsPanel" class="panel hidden">
+    <button id="backFromSettings">← Back</button>
+    <h3>Game Settings</h3>
+    <label>
+      Speed:
+      <input type="range" id="speedRange" min="2" max="10" step="0.5" value="3" />
+      <span id="speedValue">3</span>
+    </label>
+    <label>
+      Score Multiplier:
+      <input type="range" id="scoreRange" min="1" max="5" value="1" />
+      <span id="scoreValue">1</span>
+    </label>
+    <label>
+      <input type="checkbox" id="soundToggle" checked /> Sound
+    </label>
+  </div>
+
+  <div id="appInfoPanel" class="panel hidden">
+    <button id="backFromAppInfo">← Back</button>
+    <h3>App Info</h3>
+    <img src="kb.jpg" alt="Developer Photo" width="80" />
+    <p><strong>Developed by:</strong> Kibrom Getachew</p>
+    <p><strong>License:</strong> MIT</p>
+  </div>
+
+  <canvas id="gameCanvas" width="400" height="600"></canvas>
+
+  <script src="script.js"></script>
+</body>
+</html>

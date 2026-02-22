@@ -1,0 +1,8 @@
+{
+  "name": "Flappy Bird Enhanced",
+  "short_name": "FlappyBird",
+  "start_url": "./game.html",
+  "display": "standalone",
+  "background_color": "#70c5ce",
+  "theme_color": "#3498db"
+}

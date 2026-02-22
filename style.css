@@ -1,0 +1,172 @@
+/* Reset & base */
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(to bottom, #70c5ce, #ffffff);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  user-select: none;
+  color: #222;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background-color: #3498db;
+  color: white;
+  font-weight: bold;
+  border-radius: 6px;
+  padding: 8px 14px;
+  transition: background-color 0.3s ease;
+}
+button:hover {
+  background-color: #2980b9;
+}
+
+#menuBtn {
+  position: fixed;
+  top: 12px;
+  left: 12px;
+  font-size: 20px;
+  z-index: 100;
+  background: #3498db;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+}
+
+#menu {
+  position: fixed;
+  top: 60px;
+  left: 12px;
+  width: 280px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+  padding: 20px;
+  z-index: 99;
+  user-select: auto;
+}
+
+.hidden {
+  display: none;
+}
+
+#menuList {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px 0;
+  font-size: 18px;
+}
+
+#menuList li {
+  padding: 12px 10px;
+  border-bottom: 1px solid #ccc;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#menuList li.clickable {
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.25s;
+}
+#menuList li.clickable:hover {
+  background-color: #f0f0f0;
+}
+
+.panel {
+  border-top: 1px solid #ccc;
+  padding-top: 10px;
+}
+
+.panel img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+  object-fit: cover;
+  border: 2px solid #3498db;
+  box-shadow: 0 0 8px rgba(52, 152, 219, 0.7);
+}
+
+label {
+  display: block;
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+
+input[type="range"] {
+  width: 100%;
+  margin-top: 6px;
+}
+
+span {
+  font-weight: bold;
+  margin-left: 8px;
+}
+
+canvas {
+  display: block;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+  background: #70c5ce;
+  outline: none;
+}
+
+/* Night mode */
+
+body.night-mode {
+  background: #121212;
+  color: #eee;
+}
+
+body.night-mode canvas {
+  background: #222;
+  box-shadow: 0 8px 20px rgba(255,255,255,0.2);
+}
+
+body.night-mode #menu {
+  background: #333;
+  color: #eee;
+}
+
+body.night-mode #menuList li {
+  border-bottom: 1px solid #555;
+}
+
+body.night-mode #menuList li.clickable:hover {
+  background-color: #444;
+}
+
+body.night-mode button {
+  background-color: #555;
+  color: #eee;
+}
+
+/* Tooltip style for menu button */
+#menuBtn[title]:hover::after {
+  content: attr(title);
+  position: absolute;
+  top: 40px;
+  left: 12px;
+  background: rgba(0,0,0,0.75);
+  color: #fff;
+  padding: 4px 8px;
+  font-size: 13px;
+  border-radius: 4px;
+  white-space: nowrap;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* Mobile scaling */
+@media (max-width: 450px) {
+  #menu {
+    width: 90vw;
+    left: 5vw;
+  }
+}
